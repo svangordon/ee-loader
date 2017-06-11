@@ -1,0 +1,35 @@
+{
+  "name": "ee-loader",
+  "version": "0.0.1",
+  "description": "Builds the code at src/index.js and serves it to the Earthe Engine IDE.",
+  "main": "server.js",
+  "config": {
+    "defaultEntry": "src/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint src/index.js",
+    "chrome": "google-chrome https://code.earthengine.google.com --new-window --allow-insecure-localhost",
+    "start": "node server.js $1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://earthengine.googlesource.com/LULC_Mapping_SVM"
+  },
+  "author": "Stephen Van Gordon",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-env": "^1.4.0",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.1.3",
+    "eslint-plugin-import": "^2.2.0",
+    "webpack": "^2.5.1"
+  },
+  "dependencies": {
+    "cors": "^2.8.3",
+    "express": "^4.15.3"
+  }
+}

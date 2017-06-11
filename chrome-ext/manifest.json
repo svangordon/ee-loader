@@ -1,0 +1,24 @@
+{
+  "name": "EE Loader",
+  "description": "This extension automatically loads and runs Google Earth Engine code.",
+  "version": "1.2",
+  "background": {
+    "page": "background.html"
+  },
+  "content_scripts": [ {
+    "js": [ "content_script.js" ],
+    "matches": [ "https://code.earthengine.google.com/"]
+  }],
+  "page_action": {
+    "default_title": "ee-loader",
+    "default_icon": "icon2.png"
+  },
+  "permissions": [
+    "tabs",
+    "<all_urls>"
+  ],
+  "web_accessible_resources": [
+
+  ],
+  "manifest_version": 2
+}

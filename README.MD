@@ -6,8 +6,8 @@ In hopes of making utility more useful, this readme is being written with the id
 that the users might not be familiar with the Node/NPM ecosystem.
 
 ### Before you get started
-You will need `npm`, which you can find at [https://www.npmjs.com/get-npm]. You
-will also need to enable insecure localhost connections. Navigate to [chrome://flags/#allow-insecure-localhost]
+You will need `npm`, which you can find at <https://www.npmjs.com/get-npm>. You
+will also need to enable insecure localhost connections. Navigate to <chrome://flags/#allow-insecure-localhost>
 and enable that option. Depending on your OS, etc, you may have to reenable this
 every time you restart your system.
 
@@ -27,13 +27,13 @@ your script yet.
     1. Navigate to [chrome://extensions/]
     2. Enable developer mode (top right checkbox).
     3. Click `Load unpacked extension...` and have it load the chrome extension found in `./chrome-ext`
-    4. Confirm that the extension is installed: navigate to [https://code.earthengine.google.com]. To the right of the omnibox there should be a grayed out box that, when you mouse over, should display the text "ee-loader".
+    4. Confirm that the extension is installed: navigate to <https://code.earthengine.google.com>. To the right of the omnibox there should be a grayed out box that, when you mouse over, should display the text "ee-loader".
 
 ### Usage
 
 1. Open up your terminal, and navigate to the folder where you have this repo installed.
 2. Start the server with `npm start`. It should output `server is running at 8080`.
-3. Open up chrome and navigate to [https://code.earthengine.google.com]. You should see a green square in the top right of the screen, to the right of the omnibox.
+3. Open up chrome and navigate to <https://code.earthengine.google.com>. You should see a green square in the top right of the screen, to the right of the omnibox.
 4. Click that button. Ee-loader will load and then execute your script.
 5. If you would like ee-loader to watch your code for changes and automatically execute the script, double click the page action (that green square). It should turn into a red square. If you need it to run a script on command, you can still single click.
 6. When you're done, you can terminate the process in your terminal with `ctrl-c`.
@@ -69,7 +69,7 @@ is to halt program execution). I suppose you could use `eval` or something like
 that if you wanted to
 
 #### Other Issues
-On executing code, the window may hang for several seconds. This is an issue with Ace, the code editor; the behavior is present when pasting in text. Furthermore, it appears that the code is none the less executing, so I wouldn't consider it an issue. 
+On executing code, the window may hang for several seconds. This is an issue with Ace, the code editor; the behavior is present when pasting in text. Furthermore, it appears that the code is none the less executing, so I wouldn't consider it an issue.
 It's almost certain that some ES6 features transpile in a way that EE still
 doesn't like. When webpack hits a compiler error, it currently will fail silently.
 Personally, I open up another tab in the same dir and use the `webpack` command

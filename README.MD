@@ -20,7 +20,7 @@ your script yet.
 ### Installation
 
 1. Open up your terminal, and navigate to wherever you would like this code to live.
-2. Clone this folder using `git clone https://svangordon@gitlab.com/svangordon/ee-loader.git && cd ee-loader`
+2. Clone this folder using `git clone https://github.com/svangordon/ee-loader.git && cd ee-loader`
 4. Install dependencies: `npm install`
 5. Make sure that webpack works. Use the command `webpack`, and you should get a pleasant output. Your compiled script is now in `./dist`. (This step is optional)
 6. Install the ee-loader chrome extension
@@ -70,10 +70,8 @@ that if you wanted to
 
 #### Other Issues
 On executing code, the window may hang for several seconds. This is an issue with Ace, the code editor; the behavior is present when pasting in text. Furthermore, it appears that the code is none the less executing, so I wouldn't consider it an issue.
+
 It's almost certain that some ES6 features transpile in a way that EE still
-doesn't like. When webpack hits a compiler error, it currently will fail silently.
-Personally, I open up another tab in the same dir and use the `webpack` command
-to debug. I've sometimes encountered a bad state on page load that throws some
-errors in the console re: getting the window to get the `ace` editor, but I haven't
-noticed a performance issue related to it, and you can always refresh a few times
-to get it back in a normal state.
+doesn't like -- if you find one, let me know!
+
+Sometimes, the extension gets in a weird state (like autoloading with a green icon, that sort of thing). If that happens, refresh the page to get it back on track.

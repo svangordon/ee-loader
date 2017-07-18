@@ -2,7 +2,9 @@
   "name": "ee-loader",
   "version": "0.0.1",
   "description": "Builds the code at src/index.js and serves it to the Earthe Engine IDE.",
-  "main": "server.js",
+  "bin": {
+    "ee-loader": "npm start"
+  },
   "config": {
     "defaultEntry": "src/index.js"
   },

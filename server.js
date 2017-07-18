@@ -1,3 +1,4 @@
+#! /usr/bin/env node
 'use strict';
 // Make sure that you enable unsecure localhost in chrome!
 const express = require('express');

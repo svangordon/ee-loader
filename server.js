@@ -39,7 +39,6 @@ const watching = compiler.watch({}, (err, stats) => {
     console.error(err);
   } else {
     isFresh = true;
-    console.log("stats", stats)
   }
 })
 

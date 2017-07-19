@@ -16,7 +16,7 @@ let isFresh = true;
 
 // setup webpack
 if (process.argv[2]) {
-  webpackConfig.entry = "./src/" + process.argv[2]
+  webpackConfig.entry = process.argv[2]
 }
 const compiler = webpack(webpackConfig);
 const watching = compiler.watch({}, (err, stats) => {

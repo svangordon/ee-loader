@@ -10,9 +10,17 @@ app.use(cors());
 
 const webpack = require('webpack');
 const webpackConfig = require(__dirname + '/webpack.config.js');
-
 const port = 8080;
 let isFresh = true;
+
+// Check for a config file and use it
+let loaderConfig;
+try {
+  loaderConfig = fs.readFileSync("./loader.config");
+  webpackConfig.entry = loaderConfig.entry;
+} catch (e) {
+  continue;
+}
 
 // setup webpack
 if (process.argv[2]) {

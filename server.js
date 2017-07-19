@@ -19,13 +19,20 @@ try {
   loaderConfig = fs.readFileSync("./loader.config");
   webpackConfig.entry = loaderConfig.entry;
 } catch (e) {
-  continue;
+  /* continue */
 }
 
 // setup webpack
 if (process.argv[2]) {
-  webpackConfig.entry = process.argv[2]
+  webpackConfig.entry = process.argv[2];
 }
+
+// Check to see if we can find the entry point
+if (!fs.existsSync(webpackConfig.entry)) {
+  console.error("Could not find entry point. Failed to find:", webpackConfig.entry);
+  process.exit(1);
+}
+
 const compiler = webpack(webpackConfig);
 const watching = compiler.watch({}, (err, stats) => {
   isFresh = true;

@@ -1,47 +1,21 @@
 ### Overview
-With ee-loader, the code that you write on your machine will be bundled up,
-transpiled, and run in the Earth Engine IDE with the click of a button (or every
-time you save). `src/index.js` will be compiled and run in the Earth Engine IDE in Chrome.
-In hopes of making utility more useful, this readme is being written with the idea
-that the users might not be familiar with the Node/NPM ecosystem.
+With ee-loader, the code that you write on your machine will be bundled up, transpiled, and run in the Earth Engine IDE on command with the help of a Chrome extension. Google Earth Engine is a machine learning tool, created by Google, that can do lots of useful things, like processing satellite images or performing machine learning. It has a nifty online IDE for its JavaScript API; unfortunately, this doesn't support many ES6 features like arrow functions or modules. Furthermore, some of us would rather code in our preferred text editor without having to copy-paste.
+
+That's where ee-loader steps in. Ee-loader transpiles and bundles our code, sends it to the browser, and executes it in Earth Engine, easy-peasey.
 
 ### Before you get started
-You will need `npm`, which you can find at <https://www.npmjs.com/get-npm>. You
-will also need to enable insecure localhost connections. Navigate to <chrome://flags/#allow-insecure-localhost>
-and enable that option. Depending on your OS, etc, you may have to reenable this
-every time you restart your system.
-
-### Organisation
-Your code lives in `src`, at `src/index.js`. That's where ee-loader starts when
-it reads your code. The code that Earth Engine sees lives at `dist/script.js`.
-If there's nothing there, don't fret; it just means that ee-loader hasn't built
-your script yet.
+The entry point for your code should be called `index.js`. You will need `npm`, which you can find at <https://www.npmjs.com/get-npm>. You will also need to enable insecure localhost connections. Navigate to <chrome://flags/#allow-insecure-localhost> and enable that option. Finally, install the Chrome extension ee-loader, which you can find at <https://chrome.google.com/webstore/detail/ee-loader/jhnhibcoplkahnchpfkcpngnbjbpkeaa>.
 
 ### Installation
 
-1. Open up your terminal, and navigate to wherever you would like this code to live.
-2. Clone this folder using `git clone https://github.com/svangordon/ee-loader.git && cd ee-loader`
-4. Install dependencies: `npm install`
-5. Make sure that webpack works. Use the command `webpack`, and you should get a pleasant output. Your compiled script is now in `./dist`. (This step is optional)
-6. Install the ee-loader chrome extension
-    1. Navigate to [chrome://extensions/]
-    2. Enable developer mode (top right checkbox).
-    3. Click `Load unpacked extension...` and have it load the chrome extension found in `./chrome-ext`
-    4. Confirm that the extension is installed: navigate to <https://code.earthengine.google.com>. To the right of the omnibox there should be a grayed out box that, when you mouse over, should display the text "ee-loader".
+1. Open up your terminal.
+2. Install ee-loader, using `npm install -g ee-loader`.
+3. Navigate to the directory where your Earth Engine code lives.
+4. Start ee-loader with the command `ee-loader`. If your entry point has a name either than `index.js`, you can provide it as an argument to the command, eg. `ee-loader altEntryPoint.js`
+5. Navigate to <https://code.earthengine.google.com/>.
+6. Run your code by clicking the green icon to the left of the URL box. If you would like your code to automatically execute when updated, double click the icon.
+7. When you're done, you can terminate the process in your terminal with `ctrl-c`.
 
-### Usage
-
-1. Open up your terminal, and navigate to the folder where you have this repo installed.
-2. Start the server with `npm start`. It should output `server is running at 8080`.
-3. Open up chrome and navigate to <https://code.earthengine.google.com>. You should see a green square in the top right of the screen, to the right of the omnibox.
-4. Click that button. Ee-loader will load and then execute your script.
-5. If you would like ee-loader to watch your code for changes and automatically execute the script, double click the page action (that green square). It should turn into a red square. If you need it to run a script on command, you can still single click.
-6. When you're done, you can terminate the process in your terminal with `ctrl-c`.
-
-If you would like to have Webpack start somewhere other than `src/index.js`, you
-can pass the `npm start` command the name of the file in `src` that you would like
-to use as the entry point. For example, if you would like Webpack to start at
-`altEntry.js`, use: `npm start -- altEntry.js`.
 
 ### What's going on?
 With the command `npm start`, Node will use Webpack to compile the files in `src`,

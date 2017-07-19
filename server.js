@@ -10,11 +10,9 @@ app.use(cors());
 var https = require('https');
 var http = require('http');
 var fs = require('fs');
-console.log("dir ==", __dirname);
-console.log("contents ==", fs.readdirSync(__dirname));
 
 const webpack = require('webpack');
-const webpackConfig = require('./webpack.config.js');
+const webpackConfig = require(__dirname + '/webpack.config.js');
 
 const port = 8080;
 let isFresh = true;

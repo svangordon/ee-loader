@@ -1,6 +1,5 @@
 #! /usr/bin/env node
 'use strict';
-console.log("this file is running!")
 // Make sure that you enable unsecure localhost in chrome!
 const express = require('express');
 var cors = require('cors');
@@ -11,6 +10,8 @@ app.use(cors());
 var https = require('https');
 var http = require('http');
 var fs = require('fs');
+console.log("dir ==", __dirname);
+console.log("contents ==", fs.readdirSync(__dirname));
 
 const webpack = require('webpack');
 const webpackConfig = require('./webpack.config.js');
@@ -43,8 +44,8 @@ app.get('/poll', function(req, res) {
 })
 
 const httpsOptions = {
-  key: fs.readFileSync('./key.pem'),
-  cert: fs.readFileSync('./cert.pem')
+  key: fs.readFileSync(__dirname + '/key.pem'),
+  cert: fs.readFileSync(__dirname + '/cert.pem')
 };
 
 const server = https.createServer(httpsOptions, app).listen(port, () => {

@@ -4,7 +4,7 @@ module.exports = {
   entry: "./index.js",
   output: {
     filename: 'script.js',
-    path: path.resolve('./', 'dist')
+    path: path.resolve(__dirname, 'dist')
   },
   module: {
     rules: [

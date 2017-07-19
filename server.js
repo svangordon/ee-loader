@@ -1,10 +1,12 @@
 #! /usr/bin/env node
 'use strict';
+console.log("this file is running!")
 // Make sure that you enable unsecure localhost in chrome!
 const express = require('express');
 var cors = require('cors');
 const app = express();
 app.use(cors());
+
 
 var https = require('https');
 var http = require('http');

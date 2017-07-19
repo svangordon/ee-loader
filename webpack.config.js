@@ -1,5 +1,5 @@
 var path = require('path');
-
+console.log("=== dirname ===", __dirname, path.resolve(__dirname, "node_modules"))
 module.exports = {
   entry: "./index.js",
   output: {
@@ -14,7 +14,7 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['env'],
+            presets: [path.resolve(__dirname, "node_modules", 'babel-preset-env')],
             parserOpts: {
               "allowReturnOutsideFunction": true,
               "loose": true
@@ -23,5 +23,15 @@ module.exports = {
         }
       }
     ]
+  },
+  resolve:{
+    modules: [
+      path.resolve(__dirname, "node_modules")
+    ]
+  },
+  resolveLoader: {
+    modules: [path.resolve(__dirname, "node_modules"), "node_modules"],
+    extensions: [".js", ".json"],
+    mainFields: ["loader", "main"]
   }
 };

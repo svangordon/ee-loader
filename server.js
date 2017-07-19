@@ -35,7 +35,12 @@ if (!fs.existsSync(webpackConfig.entry)) {
 
 const compiler = webpack(webpackConfig);
 const watching = compiler.watch({}, (err, stats) => {
-  isFresh = true;
+  if (err) {
+    console.error(err);
+  } else {
+    isFresh = true;
+    console.log("stats", stats)
+  }
 })
 
 app.get('/', function(req, res) {

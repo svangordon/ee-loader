@@ -1,15 +1,12 @@
 #! /usr/bin/env node
 'use strict';
 // Make sure that you enable unsecure localhost in chrome!
+const https = require('https');
+const fs = require('fs');
 const express = require('express');
-var cors = require('cors');
+const cors = require('cors');
 const app = express();
 app.use(cors());
-
-
-var https = require('https');
-var http = require('http');
-var fs = require('fs');
 
 const webpack = require('webpack');
 const webpackConfig = require(__dirname + '/webpack.config.js');

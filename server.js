@@ -13,23 +13,21 @@ const webpackConfig = require(__dirname + '/webpack.config.js');
 const port = 8080;
 let isFresh = true;
 
-let entryPoint = webpackConfig.entry;
 
 // Check for a config file and use it
 let loaderConfig;
 try {
   loaderConfig = JSON.parse(fs.readFileSync("./loader.config", "utf8"));
-  entryPoint = loaderConfig.entry;
+  webpackConfig.entry = loaderConfig.entry;
 } catch (e) {
   /* continue */
 }
-// console.log(JSON.parse(loaderConfig))
 // setup webpack
 if (process.argv[2]) {
-  entryPoint = process.argv[2];
+  webpackConfig.entry = process.argv[2];
 }
 // Check to see if we can find the entry point
-if (!fs.existsSync(entryPoint)) {
+if (!fs.existsSync(webpackConfig.entry)) {
   console.error("Could not find entry point. Failed to find:", entryPoint);
   process.exit(1);
 }

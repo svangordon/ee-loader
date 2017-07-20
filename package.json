@@ -3,8 +3,7 @@
   "version": "0.3.0",
   "description": "Builds the code at src/index.js and serves it to the Earthe Engine IDE.",
   "bin": {
-    "ee-loader": "./server.js",
-    "loader": "./server.js"
+    "ee-loader": "./server.js"
   },
   "config": {
     "defaultEntry": "src/index.js"

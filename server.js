@@ -28,7 +28,7 @@ if (process.argv[2]) {
 }
 // Check to see if we can find the entry point
 if (!fs.existsSync(webpackConfig.entry)) {
-  console.error("Could not find entry point. Failed to find:", entryPoint);
+  console.error("Could not find entry point. Failed to find:", webpackConfig.entry);
   process.exit(1);
 }
 

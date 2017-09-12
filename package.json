@@ -1,6 +1,6 @@
 {
   "name": "ee-loader",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "Builds the code at src/index.js and serves it to the Earthe Engine IDE.",
   "bin": {
     "ee-loader": "./server.js"

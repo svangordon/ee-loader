@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://earthengine.googlesource.com/LULC_Mapping_SVM"
+    "url": "https://github.com/svangordon/ee-loader"
   },
   "author": "Stephen Van Gordon",
   "license": "MIT",

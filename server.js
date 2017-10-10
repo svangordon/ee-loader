@@ -42,13 +42,20 @@ const watching = compiler.watch({}, (err, stats) => {
 })
 
 app.get('/', function(req, res) {
-  fs.readFile('./dist/script.js', (err, data) => {
+  fs.readFile('./src/script.js', (err, data) => {
     if (err) {
       console.log('error: ', err);
     } else {
       res.end(data);
     }
   })
+  // fs.readFile('./dist/script.js', (err, data) => {
+  //   if (err) {
+  //     console.log('error: ', err);
+  //   } else {
+  //     res.end(data);
+  //   }
+  // })
   isFresh = false;
 });
 
